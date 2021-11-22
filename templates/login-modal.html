@@ -1,0 +1,36 @@
+<!-- Modal -->
+
+<div class="modal fade" id="login-modal" tabindex="-1" aria-labelledby="login-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="login-modal">Login</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="mb-3 p-3" style="background-color: aqua;">{{ message }}</div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <div class="mb-3">
+                        <label for="email-login" class="form-label">Email</label>
+                        <input type="email" name="login-email"class="form-control" id="email-login" aria-describedby="telefoneHelp"
+                            placeholder="Insira seu e-mail">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password-login" class="form-label">Senha</label>
+                        <input type="password" name="login-password" class="form-control" id="password-login" aria-describedby="telefoneHelp"
+                            placeholder="Insira sua senha">
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" name="submit-button" value="login" class="btn btn-success">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
